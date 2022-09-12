@@ -46,7 +46,6 @@ code {
   border-radius: 4rem;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .checkbox {
@@ -66,11 +65,19 @@ code {
   height: 16px;
 }
 
-.content-container{
-  display: flex;
-  justify-content: center;
-}
-
 .todo-content{
   margin-left: 4rem;
+}
+
+.update__delete{
+  width: 3rem;
+  display: flex;
+  flex-direction: column; 
+  margin-left: 15rem;
+  align-content: flex-end;
+}
+
+.update__button{
+  width: 3rem;
+  margin-bottom: 1.5rem;
 }
