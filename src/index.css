@@ -1,46 +1,76 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.header{
+.header {
   width: 100%;
   height: 5rem;
   background-color: lightblue;
 }
 
-.gh-container{
+.gh-container {
   margin-left: 90%;
   width: 1rem;
   display: flex;
   background-color: black;
 }
 
-.todo-container{
-  width: 75%;
+.todo-container {
+  width: 50%;
   margin: auto;
-  min-height: 40rem;
+  max-height: 40rem;
   background-color: aquamarine;
   margin-top: 5rem;
   border-radius: 4rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  overflow-y: scroll;
 }
 
-.todo__card{
+.todo__card {
   width: 30rem;
-  height: 18rem;
+  height: 8rem;
   background-color: blue;
   margin: 1rem;
   border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.checkbox {
+  clip-path: circle(46% at 50% 50%);
+  height: 32px;
+  width: 32px;
+}
+
+.checkbox[type="checkbox"]:before {
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox[type="checkbox"]:after {
+  top: -20px;
+  width: 16px;
+  height: 16px;
+}
+
+.content-container{
+  display: flex;
+  justify-content: center;
+}
+
+.todo-content{
+  margin-left: 4rem;
 }
