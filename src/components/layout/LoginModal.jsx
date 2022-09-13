@@ -9,6 +9,7 @@ function LoginModal() {
     e.preventDefault();
     setUserName(name);
     setShowModal(false);
+    localStorage.setItem("username", name);
   };
 
   return (

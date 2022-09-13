@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Header />
       {showModal && <LoginModal />}
-      {!showModal && `Welcome ${userName}!`}
+      {!showModal && `Welcome ${userName}! here is your To Do List.`}
       {!showModal && <Todos />}
     </div>
   );
