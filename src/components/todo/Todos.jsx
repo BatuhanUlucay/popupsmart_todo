@@ -9,7 +9,7 @@ function Todos() {
     fetch("https://631ae431dc236c0b1ee6b313.mockapi.io/todos")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setTodos(data);
         setLoaded(true);
       });
