@@ -21,7 +21,7 @@ function Todos() {
         {loaded &&
           todos.map((todo) => {
             //   console.log(todo);
-            return <TodoCard key={todo.id} todo={todo} />;
+            return <TodoCard key={todo.id} todo={todo} todos={todos} setTodos={setTodos}/>;
           })}
       </div>
     );
