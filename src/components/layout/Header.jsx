@@ -13,9 +13,9 @@ function Header() {
         <a
           href="https://github.com/BatuhanUlucay/popupsmart_todo"
           target="blank_"
-          className="gh-logo"
+          className="gh-logo-link"
         >
-          <img src={github} alt="github" />
+          <img src={github} alt="github" height={"50"} className="gh-logo"/>
         </a>
       </div>
     </div>

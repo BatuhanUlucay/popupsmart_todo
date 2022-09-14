@@ -22,7 +22,6 @@ function LoginModal() {
               type="text"
               className="login-input"
               onChange={(event) => setName(event.target.value)}
-              //   value={username}
             />
             <button type={"submit"}>Submit</button>
           </form>

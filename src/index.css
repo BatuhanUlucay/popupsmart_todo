@@ -85,8 +85,12 @@ button:active {
   display: flex;
 }
 
-.gh-logo {
+.gh-logo-link {
   align-self: center;
+}
+
+.gh-logo{
+  margin-right: 2rem;
 }
 
 .welcome-header {
@@ -100,9 +104,7 @@ button:active {
 .todo-container {
   width: 40%;
   margin: auto;
-  /* max-height: 40rem; */
   background-color: #cb997e;
-  /* margin-top: 1rem; */
   border-radius: 3rem;
   display: flex;
   flex-wrap: wrap;
@@ -110,7 +112,7 @@ button:active {
   overflow-y: auto;
 }
 
-.todo__card {
+.todo-card {
   width: 100%;
   height: 5rem;
   background-color: #b7b7a4;
@@ -125,12 +127,13 @@ button:active {
   margin-left: 4rem;
 }
 
-.update__delete {
+.update-delete {
+  cursor: pointer;
   position: absolute;
   right: 10%;
 }
 
-.update__button {
+.update-button {
   width: 3rem;
   margin-bottom: 1.5rem;
 }
@@ -193,10 +196,6 @@ button:active {
   justify-content: center;
 }
 
-.login-input {
-  margin-right: 2rem;
-}
-
 .login-text {
   text-align: center;
 }
@@ -212,6 +211,12 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.char-warning{
+  margin-left: 3rem;
+  margin-top: 0;
+  color: crimson;
 }
 
 .what-to-do {
