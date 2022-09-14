@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CreateTodo from "./CreateTodo";
 import TodoCard from "./TodoCard";
 
 function Todos() {
@@ -15,16 +16,24 @@ function Todos() {
       });
   }, []);
 
-    return (
+  return (
+    <>
+      <CreateTodo todos={todos} setTodos={setTodos}/>
       <div className="todo-container">
-        {/* <TodoCard /> */}
         {loaded &&
           todos.map((todo) => {
-            //   console.log(todo);
-            return <TodoCard key={todo.id} todo={todo} todos={todos} setTodos={setTodos}/>;
+            return (
+              <TodoCard
+                key={todo.id}
+                todo={todo}
+                todos={todos}
+                setTodos={setTodos}
+              />
+            );
           })}
       </div>
-    );
+    </>
+  );
 }
 
 export default Todos;
