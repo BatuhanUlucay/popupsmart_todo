@@ -89,7 +89,7 @@ button:active {
   align-self: center;
 }
 
-.gh-logo{
+.gh-logo {
   margin-right: 2rem;
 }
 
@@ -213,7 +213,7 @@ button:active {
   justify-content: center;
 }
 
-.char-warning{
+.char-warning {
   margin-left: 3rem;
   margin-top: 0;
   color: crimson;
@@ -221,4 +221,58 @@ button:active {
 
 .what-to-do {
   margin: 1rem;
+}
+
+.theme-container {
+  float: right;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#toggle {
+  display: none;
+}
+
+.theme {
+  display: inline-block;
+  width: 90px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 3rem;
+}
+
+.theme::after {
+  content: url("./assets/images/sun.png");
+  width: 40px;
+  height: 40px;
+  background-color: #e03c3c;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: -5px;
+  left: 0;
+  display: grid;
+  place-content: center;
+  line-height: 0;
+  transition: background-color 1s;
+  transform: 1s rotate(360deg) ease-in;
+  /* -webkit-transform: 1s rotate(360deg) ease-in; */
+  /* -webkit-animation: spin 4s linear 1s;
+  -moz-animation: spin 4s linear 1s;
+  animation: spin 4s linear 1s; */
+}
+/* @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } } */
+
+#toggle:checked + .theme::after {
+  content: url("./assets/images/moon.png");
+  background-color: #1f257f;
+  transform: translateX(50px) rotate(360deg);
+  /* -webkit-transform: translateX(50px) rotate(360deg); */
 }

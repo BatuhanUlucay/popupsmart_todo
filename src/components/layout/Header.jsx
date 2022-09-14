@@ -10,12 +10,16 @@ function Header() {
         <h1>To Do</h1>
       </div>
       <div className="gh-container">
+        <div className="theme-container">
+          <input type="checkbox" id="toggle" />
+          <label for="toggle" className="theme" />
+        </div>
         <a
           href="https://github.com/BatuhanUlucay/popupsmart_todo"
           target="blank_"
           className="gh-logo-link"
         >
-          <img src={github} alt="github" height={"50"} className="gh-logo"/>
+          <img src={github} alt="github" height={"50"} className="gh-logo" />
         </a>
       </div>
     </div>
