@@ -53,14 +53,15 @@ function TodoCard({ todo, todos, setTodos }) {
             <input
               defaultValue={todo.content}
               onChange={(event) => setUpdatedContent(event.target.value)}
+              type="text"
             ></input>
             <button>Save</button>
           </form>
         </div>
         <div className="update__delete">
-          <i className="update-button" onClick={handleUpdate}>
-            <HiPencilAlt size={"30px"} style={{ marginBottom: "1.5rem" }} />
-          </i>
+          <div className="update-button" onClick={handleUpdate}>
+            <HiPencilAlt size={"30px"} />
+          </div>
           <div className="delete-button" onClick={handleDelete}>
             <HiOutlineTrash size={"30px"} />
           </div>

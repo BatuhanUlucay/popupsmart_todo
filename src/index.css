@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffe8d6;
 }
 
 code {
@@ -12,57 +13,41 @@ code {
     monospace;
 }
 
-.header {
-  width: 100%;
-  height: 8rem;
-  background-color: lightblue;
-  display: flex;
-  justify-content: space-between;
+input[type="text"] {
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  height: 1rem;
+  border-radius: 10px;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
-.logo {
-  width: 8rem;
+button {
+  box-shadow: inset 0px 1px 3px 0px #91b8b3;
+  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  background-color: #768d87;
+  border-radius: 5px;
+  border: 1px solid #566963;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 11px 23px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #2b665e;
 }
 
-.gh-container {
-  float: right;
-  height: 100%;
-  display: flex;
+button:hover {
+  background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  background-color: #6c7c7c;
 }
 
-.gh-logo{
-  align-self: center;
-}
-
-.welcome-header{
-  display: flex;
-  text-align: center;
-  align-items: center;
-  font-size: x-large;
-  color: antiquewhite;
-}
-
-.todo-container {
-  width: 50%;
-  margin: auto;
-  max-height: 40rem;
-  background-color: aquamarine;
-  margin-top: 5rem;
-  border-radius: 4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow-y: scroll;
-}
-
-.todo__card {
-  width: 30rem;
-  height: 8rem;
-  background-color: blue;
-  margin: 1rem;
-  border-radius: 4rem;
-  display: flex;
-  align-items: center;
+button:active {
+  position: relative;
+  top: 1px;
 }
 
 .checkbox {
@@ -82,16 +67,67 @@ code {
   height: 16px;
 }
 
+.header {
+  width: 100%;
+  height: 8rem;
+  background-color: #6b705c;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 8rem;
+}
+
+.gh-container {
+  float: right;
+  height: 100%;
+  display: flex;
+}
+
+.gh-logo {
+  align-self: center;
+}
+
+.welcome-header {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: x-large;
+  color: #ffe8d6;
+}
+
+.todo-container {
+  width: 40%;
+  margin: auto;
+  /* max-height: 40rem; */
+  background-color: #cb997e;
+  /* margin-top: 1rem; */
+  border-radius: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.todo__card {
+  width: 100%;
+  height: 5rem;
+  background-color: #b7b7a4;
+  margin: 1rem;
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 .todo-content {
   margin-left: 4rem;
 }
 
 .update__delete {
-  width: 3rem;
-  display: flex;
-  flex-direction: column;
-  margin-left: 15rem;
-  align-content: flex-end;
+  position: absolute;
+  right: 10%;
 }
 
 .update__button {
@@ -158,11 +194,26 @@ code {
 }
 
 .login-input {
-  height: 2rem;
-  border-radius: 5px;
   margin-right: 2rem;
 }
 
 .login-text {
   text-align: center;
+}
+
+.welcome-text {
+  text-align: center;
+}
+
+.create-todo-container {
+  height: 8rem;
+  margin: 2rem;
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-to-do {
+  margin: 1rem;
 }

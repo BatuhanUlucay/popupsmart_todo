@@ -25,17 +25,26 @@ function CreateTodo({ todos, setTodos }) {
       requestOptions
     ).then(() => {
       setTodos([...todos, newTodo]);
+      setContent("");
       console.log("Created!");
     });
   };
 
   return (
-    <div>
-      What to do now?
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => setContent(e.target.value)}></input>
-        <button type="submit">Add</button>
-      </form>
+    <div className="create-todo-container">
+      <div className="create-todo">
+        <div className="todo__card">
+          <h3 className="what-to-do">What to do now?</h3>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              onChange={(e) => setContent(e.target.value)}
+              value={content}
+            ></input>
+            <button type="submit">Add</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
