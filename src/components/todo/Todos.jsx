@@ -22,17 +22,19 @@ function Todos() {
       <CreateTodo todos={todos} setTodos={setTodos} />
       <div className="todo-container">
         {loaded &&
-          todos.map((todo) => {
-            console.log(todo);
-            return (
-              <TodoCard
-                key={todo.id}
-                todo={todo}
-                todos={todos}
-                setTodos={setTodos}
-              />
-            );
-          })}
+          todos
+            .map((todo) => {
+              return (
+                <TodoCard
+                  key={todo.id}
+                  todo={todo}
+                  todos={todos}
+                  setTodos={setTodos}
+                />
+              );
+            })
+            .slice()
+            .reverse()}
       </div>
     </>
   );

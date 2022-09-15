@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
 import github from "../../assets/images/githubLogo.png";
 
 function Header() {
+  const [checked, setChecked] = useState(
+    localStorage.getItem("themePreference") === "dark"
+  );
+
   const handleToggle = (e) => {
     const currentTheme = localStorage.getItem("themePreference");
     localStorage.setItem(
@@ -13,6 +17,8 @@ function Header() {
       "data-theme",
       localStorage.getItem("themePreference") === "dark" ? "dark" : "light"
     );
+
+    setChecked(!checked);
   };
 
   return (
@@ -23,7 +29,12 @@ function Header() {
       </div>
       <div className="gh-container">
         <div className="theme-container">
-          <input type="checkbox" id="toggle_checkbox" onChange={handleToggle} />
+          <input
+            type="checkbox"
+            id="toggle_checkbox"
+            onChange={handleToggle}
+            checked={checked}
+          />
 
           <label htmlFor="toggle_checkbox">
             <div id="star">

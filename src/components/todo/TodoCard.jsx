@@ -41,12 +41,8 @@ function TodoCard({ todo, todos, setTodos }) {
   };
 
   const handleToggle = (e) => {
-    // debug here.
-
     const index = todos.findIndex((element) => element.id === todo.id);
     todos[index].isCompleted = !isCompletedToggle;
-
-    console.log(todos[index]);
 
     const requestOptions = {
       method: "PUT",
@@ -56,7 +52,7 @@ function TodoCard({ todo, todos, setTodos }) {
 
     fetch(`${API_URL}/${todo.id}`, requestOptions).then(() => {
       setTodos(todos);
-      setIsCompletedToggle(!isCompletedToggle)
+      setIsCompletedToggle(!isCompletedToggle);
     });
   };
 

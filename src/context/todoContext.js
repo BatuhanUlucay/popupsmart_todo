@@ -6,6 +6,11 @@ export const TodoContextProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(true);
   const [userName, setUserName] = useState("");
 
+  document.documentElement.setAttribute(
+    "data-theme",
+    localStorage.getItem("themePreference") === "dark" ? "dark" : "light"
+  );
+
   return (
     <TodoContext.Provider
       value={{
