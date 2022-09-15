@@ -7,9 +7,7 @@ function TodoCard({ todo, todos, setTodos }) {
   const [contentMode, setContentMode] = useState("");
   const [inputMode, setInputMode] = useState("hidden");
   const [updatedContent, setUpdatedContent] = useState("");
-  const [isCompletedToggle, setIsCompletedToggle] = useState(
-    todo.isCompleted === "true"
-  );
+  const [isCompletedToggle, setIsCompletedToggle] = useState(todo.isCompleted);
 
   const handleDelete = (e) => {
     fetch(`${API_URL}/${todo.id}`, {
@@ -43,13 +41,12 @@ function TodoCard({ todo, todos, setTodos }) {
   };
 
   const handleToggle = (e) => {
-    setIsCompletedToggle(!isCompletedToggle);
-    console.log("toggled");
-
     // debug here.
 
     const index = todos.findIndex((element) => element.id === todo.id);
-    todos[index].isCompleted = isCompletedToggle;
+    todos[index].isCompleted = !isCompletedToggle;
+
+    console.log(todos[index]);
 
     const requestOptions = {
       method: "PUT",
@@ -59,6 +56,7 @@ function TodoCard({ todo, todos, setTodos }) {
 
     fetch(`${API_URL}/${todo.id}`, requestOptions).then(() => {
       setTodos(todos);
+      setIsCompletedToggle(!isCompletedToggle)
     });
   };
 

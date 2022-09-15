@@ -23,6 +23,7 @@ function Todos() {
       <div className="todo-container">
         {loaded &&
           todos.map((todo) => {
+            console.log(todo);
             return (
               <TodoCard
                 key={todo.id}

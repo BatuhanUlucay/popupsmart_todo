@@ -4,6 +4,10 @@ import LoginModal from "./components/layout/LoginModal";
 import Todos from "./components/todo/Todos";
 import TodoContext from "./context/todoContext";
 
+//TODO: reverse the todo array.
+
+// debug completed logic.
+
 function App() {
   const { userName, setUserName, showModal, setShowModal } =
     useContext(TodoContext);
