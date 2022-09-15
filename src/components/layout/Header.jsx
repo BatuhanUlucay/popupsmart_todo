@@ -3,6 +3,18 @@ import logo from "../../assets/images/logo.png";
 import github from "../../assets/images/githubLogo.png";
 
 function Header() {
+  const handleToggle = (e) => {
+    const currentTheme = localStorage.getItem("themePreference");
+    localStorage.setItem(
+      "themePreference",
+      currentTheme === "light" ? "dark" : "light"
+    );
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("themePreference") === "dark" ? "dark" : "light"
+    );
+  };
+
   return (
     <div className="header">
       <img src={logo} alt="logo" className="logo" />
@@ -10,12 +22,8 @@ function Header() {
         <h1>To Do</h1>
       </div>
       <div className="gh-container">
-        {/* <div className="theme-container">
-          <input type="checkbox" id="toggle" />
-          <label for="toggle" className="theme" />
-        </div> */}
         <div className="theme-container">
-          <input type="checkbox" id="toggle_checkbox" />
+          <input type="checkbox" id="toggle_checkbox" onChange={handleToggle} />
 
           <label htmlFor="toggle_checkbox">
             <div id="star">

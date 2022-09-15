@@ -1,3 +1,19 @@
+:root {
+  --primary-color: #b7b7a4;
+  --secondary-color: #cb997e;
+  --font-color: #424242;
+  --bg-color: #ffe8d6;
+  --header-color: #6b705c;
+}
+
+[data-theme="dark"] {
+  --primary-color: #9a97f3;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #1d1d3a;
+  --header-color: #818cab;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,7 +21,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffe8d6;
+  background-color: var(--bg-color);
 }
 
 code {
@@ -70,7 +86,7 @@ button:active {
 .header {
   width: 100%;
   height: 8rem;
-  background-color: #6b705c;
+  background-color: var(--header-color);
   display: flex;
   justify-content: space-between;
 }
@@ -98,13 +114,13 @@ button:active {
   text-align: center;
   align-items: center;
   font-size: x-large;
-  color: #ffe8d6;
+  color: var(--font-color);
 }
 
 .todo-container {
   width: 40%;
   margin: auto;
-  background-color: #cb997e;
+  background-color: var(--secondary-color);
   border-radius: 3rem;
   display: flex;
   flex-wrap: wrap;
@@ -115,7 +131,7 @@ button:active {
 .todo-card {
   width: 100%;
   height: 5rem;
-  background-color: #b7b7a4;
+  background-color: var(--primary-color);
   margin: 1rem;
   border-radius: 4rem;
   display: flex;
@@ -142,6 +158,10 @@ button:active {
   display: none;
 }
 
+.overline {
+  text-decoration: line-through;
+}
+
 .modal {
   position: absolute;
   top: 40%;
@@ -149,7 +169,7 @@ button:active {
   transform: translate(-50%, -50%);
   width: 30%;
 
-  background-color: white;
+  background-color: var(--primary-color);
   padding: 6rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
@@ -202,6 +222,7 @@ button:active {
 
 .welcome-text {
   text-align: center;
+  color: var(--font-color);
 }
 
 .create-todo-container {

@@ -7,6 +7,9 @@ function TodoCard({ todo, todos, setTodos }) {
   const [contentMode, setContentMode] = useState("");
   const [inputMode, setInputMode] = useState("hidden");
   const [updatedContent, setUpdatedContent] = useState("");
+  const [isCompletedToggle, setIsCompletedToggle] = useState(
+    todo.isCompleted === "true"
+  );
 
   const handleDelete = (e) => {
     fetch(`${API_URL}/${todo.id}`, {
@@ -39,11 +42,42 @@ function TodoCard({ todo, todos, setTodos }) {
     });
   };
 
+  const handleToggle = (e) => {
+    setIsCompletedToggle(!isCompletedToggle);
+    console.log("toggled");
+
+    // debug here.
+
+    const index = todos.findIndex((element) => element.id === todo.id);
+    todos[index].isCompleted = isCompletedToggle;
+
+    const requestOptions = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(todos[index]),
+    };
+
+    fetch(`${API_URL}/${todo.id}`, requestOptions).then(() => {
+      setTodos(todos);
+    });
+  };
+
   return (
     <>
       <div className="todo-card">
-        <input className="checkbox" type={"checkbox"} />
-        <div className={`todo-content ${contentMode}`}>{todo.content}</div>
+        <input
+          onChange={handleToggle}
+          className="checkbox"
+          type={"checkbox"}
+          checked={isCompletedToggle}
+        />
+        <div
+          className={`todo-content ${contentMode} ${
+            isCompletedToggle ? "overline" : ""
+          }`}
+        >
+          {todo.content}
+        </div>
         <div className={`todo-input ${inputMode}`}>
           <form onSubmit={handleSave}>
             <input

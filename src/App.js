@@ -19,11 +19,14 @@ function App() {
   return (
     <>
       <Header />
-      {showModal && <LoginModal />}
-      {!showModal && (
-        <h2 className="welcome-text">{`Welcome ${userName}! here is your To Do List.`}</h2>
+      {showModal ? (
+        <LoginModal />
+      ) : (
+        <>
+          <h2 className="welcome-text">{`Welcome ${userName}! here is your To Do List.`}</h2>
+          <Todos />
+        </>
       )}
-      {!showModal && <Todos />}
     </>
   );
 }

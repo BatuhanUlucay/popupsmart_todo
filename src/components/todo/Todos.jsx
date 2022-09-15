@@ -19,7 +19,7 @@ function Todos() {
 
   return (
     <>
-      <CreateTodo todos={todos} setTodos={setTodos}/>
+      <CreateTodo todos={todos} setTodos={setTodos} />
       <div className="todo-container">
         {loaded &&
           todos.map((todo) => {
