@@ -11,7 +11,7 @@ function CreateTodo({ todos, setTodos }) {
 
     if (content.length < 3) return;
 
-    const lastId = todos.slice(-1).pop().id;
+    const lastId = todos.slice(-1).pop()?.id || 0;
 
     const newTodo = {
       id: +lastId + 1,
@@ -42,7 +42,9 @@ function CreateTodo({ todos, setTodos }) {
                 type="text"
                 onChange={(e) => {
                   setContent(e.target.value);
-                  content.length >= 2 ? setWarning("hidden") : setWarning("");
+                  e.target.value.length > 2
+                    ? setWarning("hidden")
+                    : setWarning("");
                 }}
                 value={content}
               ></input>

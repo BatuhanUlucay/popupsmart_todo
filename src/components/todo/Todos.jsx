@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CreateTodo from "./CreateTodo";
 import TodoCard from "./TodoCard";
+import Spinner from "../../assets/images/spinner.gif";
 
 const API_URL = "https://631ae431dc236c0b1ee6b313.mockapi.io/todos";
 
@@ -21,7 +22,7 @@ function Todos() {
     <>
       <CreateTodo todos={todos} setTodos={setTodos} />
       <div className="todo-container">
-        {loaded &&
+        {loaded ? ( todos.length > 0 ? (
           todos
             .map((todo) => {
               return (
@@ -34,7 +35,10 @@ function Todos() {
               );
             })
             .slice()
-            .reverse()}
+            .reverse() ) : (<h4>Yay! There is nothing To Do today!</h4>)
+        ) : (
+          <img src={Spinner} alt="Loading..." />
+        )}
       </div>
     </>
   );

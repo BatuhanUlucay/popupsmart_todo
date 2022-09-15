@@ -126,6 +126,15 @@ button:active {
   flex-wrap: wrap;
   justify-content: center;
   overflow-y: auto;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.todo-container::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
 }
 
 .todo-card {
@@ -344,4 +353,10 @@ label {
 
 #toggle_checkbox:checked + label #moon:before {
   background-color: #000;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

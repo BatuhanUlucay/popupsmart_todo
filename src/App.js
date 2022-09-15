@@ -23,7 +23,7 @@ function App() {
         <LoginModal />
       ) : (
         <>
-          <h2 className="welcome-text">{`Welcome ${userName}! here is your To Do List.`}</h2>
+          <h2 className="welcome-text">{`Welcome ${userName}! Here is your To Do list.`}</h2>
           <Todos />
         </>
       )}
