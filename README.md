@@ -9,4 +9,5 @@ Project is written with [React](https://reactjs.org/). [CSS](https://www.w3.org/
 The data is stored in [Mock API](https://mockapi.io/).
 
 ## Project Website
-Will be added
+
+Can be accessed [here](https://popupsmart-todo.vercel.app/)
